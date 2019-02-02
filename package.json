@@ -1,0 +1,30 @@
+{
+  "fitbit": {
+    "appUUID": "0b02edf4-c69d-451a-9b74-6a7636cf831b",
+    "appType": "app",
+    "appDisplayName": "fitbitdata",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#4caf50",
+    "requestedPermissions": [
+      "access_activity",
+      "access_user_profile",
+      "access_heart_rate",
+      "access_location",
+      "access_internet",
+      "run_background",
+      "access_exercise"
+    ],
+    "buildTargets": [
+      "higgs",
+      "meson"
+    ],
+    "i18n": {
+      "en": {
+        "name": "fitbitdata"
+      }
+    }
+  },
+  "devDependencies": {
+    "@fitbit/sdk": "~3.0.0"
+  }
+}
