@@ -13,19 +13,28 @@ clock.granularity = "minutes";
 
 const myLabel = document.getElementById("myLabel");
 
-var body = new BodyPresenceSensor();
+var bodysensor = new BodyPresenceSensor();
 
 if (me.permissions.granted("access_heart_rate")){
   var heartRateSensor = new HeartRateSensor();
 }
 
-
+bodysensor.onreading = () =>{
+  if(!bodysensor.present){
+    heartRateSensor.stop();
+  }
+  else{
+    heartRateSensor.start();
+  }
+}
 
 heartRateSensor.onreading = function() {
   console.log("Current heart rate: " + heartRateSensor.heartRate);
-  myLabel.text = `${"Heart Rate:"}:${heartRateSensor.heartRate}`;
+  myLabel.text = "HR: " + heartRateSensor.heartRate;
 }
 
-hearRateSensor.start()
+bodysensor.start();
+
+
 
 
