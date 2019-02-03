@@ -22,6 +22,7 @@ if (me.permissions.granted("access_heart_rate")){
 bodysensor.onreading = () =>{
   if(!bodysensor.present){
     heartRateSensor.stop();
+    myLabel.text = "ERROR";
   }
   else{
     heartRateSensor.start();
